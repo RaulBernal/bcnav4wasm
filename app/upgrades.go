@@ -42,7 +42,7 @@ func (app App) RegisterUpgradeHandlers() {
 	app.StickyFingers(upgradeInfo)
 }
 func (app *App) StickyFingers(_ upgradetypes.Plan) {
-	planName := "stickyfingers"
+	planName := "stickyfingers-wasm"
 	app.UpgradeKeeper.SetUpgradeHandler(
 		planName,
 		func(ctx context.Context, plan upgradetypes.Plan, fromVM module.VersionMap) (module.VersionMap, error) {
