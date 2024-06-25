@@ -3,10 +3,10 @@ validation: sovereign
 accounts: 
 - name: alice
   coins:
-  - 300000000ubcna
+  - 3000000000000ubcna
 - name: bob
   coins:
-  - 200000000ubcna
+  - 2000000000000ubcna
 client:
   openapi:
     path: docs/static/openapi.yml
@@ -30,10 +30,21 @@ genesis:
      params:
        mint_denom: "ubcna"
    gov:
-     deposit_params:
+     params:
        min_deposit:
          - denom: "ubcna"
-           amount: "10000000"
+           amount: "100000"
+       voting_period: "300s"
+       expedited_min_deposit:
+         - denom: "ubcna"
+           amount: "100000"
+       expedited_voting_period: "100s"
+   wasm:
+     params:
+       code_upload_access:
+         addresses: []
+         permission: "Nobody"
+       instantiate_default_permission: "Nobody"
 client:
  vuex:
    path: "vue/src/store"
